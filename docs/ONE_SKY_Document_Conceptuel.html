@@ -1,0 +1,987 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ONE SKY - Document Conceptuel Graphique</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --deep-space: #0A0E1A;
+            --midnight-blue: #0D1B2A;
+            --cosmic-blue: #1B263B;
+            --stellar-blue: #415A77;
+            --nebula-gray: #778DA9;
+            --lunar-white: #E0E1DD;
+            --pure-white: #FFFFFF;
+            --cyber-cyan: #00D4FF;
+            --aurora-violet: #7B2CBF;
+            --quantum-silver: #C0C5CE;
+            --alert-orange: #FF6B35;
+            --success-green: #2ECC71;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(180deg, var(--deep-space) 0%, var(--midnight-blue) 100%);
+            color: var(--lunar-white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Stars Animation */
+        .stars {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s ease-in-out infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.3; }
+            50% { opacity: 0.9; }
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(10, 14, 26, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .nav-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .nav-logo span {
+            font-weight: 700;
+            font-size: 1.2rem;
+            letter-spacing: 0.1em;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: var(--nebula-gray);
+            text-decoration: none;
+            font-size: 0.875rem;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--cyber-cyan);
+        }
+
+        /* Sections */
+        section {
+            min-height: 100vh;
+            padding: 120px 2rem 80px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .hero-logo {
+            margin-bottom: 2rem;
+        }
+
+        .hero-logo svg {
+            width: 300px;
+            height: 150px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            color: var(--cyber-cyan);
+            font-size: 1.1rem;
+            letter-spacing: 0.3em;
+            text-transform: uppercase;
+            margin-bottom: 2rem;
+        }
+
+        .hero-tagline {
+            font-size: 1.25rem;
+            max-width: 600px;
+            color: var(--lunar-white);
+            opacity: 0.9;
+        }
+
+        .hero-line {
+            width: 200px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--cyber-cyan), transparent);
+            margin: 3rem 0;
+        }
+
+        .hero-version {
+            color: var(--nebula-gray);
+            font-size: 0.875rem;
+        }
+
+        /* Section Header */
+        .section-header {
+            margin-bottom: 4rem;
+        }
+
+        .section-header .number {
+            font-size: 8rem;
+            font-weight: 800;
+            color: rgba(0, 212, 255, 0.1);
+            line-height: 1;
+            margin-bottom: -2rem;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header h3 {
+            font-size: 1.5rem;
+            color: var(--cyber-cyan);
+            font-weight: 400;
+        }
+
+        .section-header .line {
+            width: 120px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--cyber-cyan), transparent);
+            margin-top: 1.5rem;
+            border-radius: 2px;
+        }
+
+        /* Cards */
+        .card {
+            background: rgba(27, 38, 59, 0.6);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            border: 1px solid rgba(0, 212, 255, 0.1);
+        }
+
+        .card h4 {
+            color: var(--cyber-cyan);
+            font-size: 0.9rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            margin-bottom: 1rem;
+        }
+
+        /* Grid */
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .grid-4 {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .grid-2, .grid-4 {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Color Swatches */
+        .color-swatch {
+            text-align: left;
+        }
+
+        .color-swatch .swatch {
+            height: 80px;
+            border-radius: 12px;
+            margin-bottom: 12px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .color-swatch:hover .swatch {
+            transform: scale(1.05);
+        }
+
+        .color-swatch .name {
+            font-weight: 600;
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+        }
+
+        .color-swatch .hex {
+            font-family: 'SF Mono', 'Consolas', monospace;
+            font-size: 0.75rem;
+            color: var(--nebula-gray);
+        }
+
+        .color-swatch .usage {
+            font-size: 0.75rem;
+            color: var(--stellar-blue);
+            margin-top: 4px;
+        }
+
+        /* Quote */
+        .quote {
+            background: rgba(0, 212, 255, 0.08);
+            border-left: 4px solid var(--cyber-cyan);
+            padding: 2rem;
+            border-radius: 0 16px 16px 0;
+            margin-top: 3rem;
+        }
+
+        .quote p {
+            font-size: 1.25rem;
+            font-style: italic;
+            color: var(--lunar-white);
+        }
+
+        /* List */
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(119, 141, 169, 0.2);
+        }
+
+        .feature-list li:last-child {
+            border-bottom: none;
+        }
+
+        .feature-list .arrow {
+            color: var(--cyber-cyan);
+            font-size: 1.2rem;
+        }
+
+        /* Typography Samples */
+        .typo-sample {
+            background: rgba(27, 38, 59, 0.5);
+            padding: 2rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+        }
+
+        .typo-sample .label {
+            color: var(--cyber-cyan);
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            margin-bottom: 8px;
+        }
+
+        .typo-sample .spec {
+            color: var(--nebula-gray);
+            font-size: 0.75rem;
+            margin-top: 8px;
+        }
+
+        /* Logo Variations */
+        .logo-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+        }
+
+        .logo-box {
+            padding: 3rem;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 200px;
+        }
+
+        .logo-box.dark {
+            background: var(--midnight-blue);
+        }
+
+        .logo-box.light {
+            background: var(--lunar-white);
+        }
+
+        /* Color Bar */
+        .color-bar {
+            display: flex;
+            height: 48px;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 1rem;
+        }
+
+        .color-bar > div {
+            display: flex;
+            align-items: center;
+            padding: 0 12px;
+            font-size: 0.75rem;
+            font-weight: 500;
+        }
+
+        /* Graphic Elements */
+        .element-demo {
+            background: rgba(27, 38, 59, 0.4);
+            border-radius: 16px;
+            padding: 2rem;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Orbital Animation */
+        .orbital-demo {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .orbit {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid rgba(0, 212, 255, 0.3);
+            border-radius: 50%;
+            animation: spin 20s linear infinite;
+        }
+
+        @keyframes spin {
+            from { transform: translate(-50%, -50%) rotate(0deg); }
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        /* Grid Demo */
+        .grid-demo {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 2px;
+            width: 150px;
+            height: 150px;
+        }
+
+        .grid-demo .cell {
+            background: rgba(0, 212, 255, 0.15);
+            border: 1px solid rgba(0, 212, 255, 0.2);
+        }
+
+        .grid-demo .cell.active {
+            background: var(--cyber-cyan);
+        }
+
+        /* Do's and Don'ts */
+        .do-dont {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+
+        .do h4 {
+            color: var(--success-green);
+        }
+
+        .dont h4 {
+            color: var(--alert-orange);
+        }
+
+        .do-dont ul {
+            list-style: none;
+            margin-top: 1.5rem;
+        }
+
+        .do-dont li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        .do li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--success-green);
+        }
+
+        .dont li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--alert-orange);
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 4rem 2rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        footer .logo {
+            margin-bottom: 2rem;
+        }
+
+        footer .tagline {
+            color: var(--cyber-cyan);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        footer .contact {
+            color: var(--lunar-white);
+            margin-bottom: 2rem;
+        }
+
+        footer .copyright {
+            color: var(--nebula-gray);
+            font-size: 0.75rem;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .float {
+            animation: float 6s ease-in-out infinite;
+        }
+
+        /* Gradient text */
+        .gradient-text {
+            background: linear-gradient(135deg, var(--cyber-cyan), var(--aurora-violet));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+    </style>
+</head>
+<body>
+    <!-- Stars Background -->
+    <div class="stars" id="stars"></div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-content">
+            <div class="nav-logo">
+                <svg width="40" height="20" viewBox="0 0 100 50">
+                    <ellipse cx="50" cy="25" rx="40" ry="12" fill="none" stroke="#00D4FF" stroke-width="1.5" opacity="0.6"/>
+                    <circle cx="50" cy="25" r="10" fill="#1B263B" stroke="#00D4FF" stroke-width="2"/>
+                    <circle cx="75" cy="18" r="3" fill="#00D4FF"/>
+                </svg>
+                <span>ONE SKY</span>
+            </div>
+            <div class="nav-links">
+                <a href="#vision">Vision</a>
+                <a href="#colors">Couleurs</a>
+                <a href="#typography">Typographie</a>
+                <a href="#logo">Logo</a>
+                <a href="#elements">Éléments</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-logo float">
+            <svg viewBox="0 0 300 150">
+                <!-- Outer orbits -->
+                <ellipse cx="150" cy="75" rx="140" ry="45" fill="none" stroke="#00D4FF" stroke-width="0.5" opacity="0.3">
+                    <animateTransform attributeName="transform" type="rotate" from="0 150 75" to="360 150 75" dur="30s" repeatCount="indefinite"/>
+                </ellipse>
+                <ellipse cx="150" cy="75" rx="110" ry="35" fill="none" stroke="#00D4FF" stroke-width="1" opacity="0.5">
+                    <animateTransform attributeName="transform" type="rotate" from="0 150 75" to="-360 150 75" dur="20s" repeatCount="indefinite"/>
+                </ellipse>
+                <ellipse cx="150" cy="75" rx="80" ry="25" fill="none" stroke="#00D4FF" stroke-width="1.5" opacity="0.7"/>
+                <!-- Central sphere -->
+                <circle cx="150" cy="75" r="30" fill="#1B263B" stroke="#00D4FF" stroke-width="3"/>
+                <circle cx="150" cy="75" r="20" fill="none" stroke="#415A77" stroke-width="1"/>
+                <!-- Satellite -->
+                <circle cx="220" cy="55" r="6" fill="#00D4FF">
+                    <animate attributeName="cx" values="220;80;220" dur="8s" repeatCount="indefinite"/>
+                    <animate attributeName="cy" values="55;95;55" dur="8s" repeatCount="indefinite"/>
+                </circle>
+            </svg>
+        </div>
+        <h1>ONE SKY</h1>
+        <p class="hero-subtitle">Document Conceptuel Graphique</p>
+        <p class="hero-tagline">Observer la planète pour permettre au monde de décider mieux, plus vite et durablement.</p>
+        <div class="hero-line"></div>
+        <p class="hero-version">Version 1.0 • Janvier 2026</p>
+    </section>
+
+    <!-- Vision Section -->
+    <section id="vision">
+        <div class="container">
+            <div class="section-header">
+                <div class="number">01</div>
+                <h2>VISION</h2>
+                <h3>& Positionnement Stratégique</h3>
+                <div class="line"></div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h4>MISSION</h4>
+                    <p>ONE SKY est un opérateur stratégique de données géospatiales décisionnelles, positionné au cœur de la New Space Economy. Notre mission est de transformer les observations spatiales en intelligence actionnable pour les décideurs du monde entier.</p>
+                </div>
+                <div class="card">
+                    <h4>AUDIENCES CIBLES</h4>
+                    <ul class="feature-list">
+                        <li><span class="arrow">→</span> États & Gouvernements</li>
+                        <li><span class="arrow">→</span> Institutions Internationales</li>
+                        <li><span class="arrow">→</span> Organisations Stratégiques</li>
+                        <li><span class="arrow">→</span> Industries Critiques</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="grid-2" style="margin-top: 2rem;">
+                <div class="card">
+                    <h4>VALEURS DE MARQUE</h4>
+                    <ul class="feature-list">
+                        <li><span class="arrow">→</span> <strong>Excellence</strong> — Rigueur scientifique</li>
+                        <li><span class="arrow">→</span> <strong>Innovation</strong> — Technologies de pointe</li>
+                        <li><span class="arrow">→</span> <strong>Souveraineté</strong> — Indépendance décisionnelle</li>
+                        <li><span class="arrow">→</span> <strong>Durabilité</strong> — Engagement environnemental</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>UNIVERS VISUEL</h4>
+                    <ul class="feature-list">
+                        <li><span class="arrow">→</span> Spatial & Satellitaire</li>
+                        <li><span class="arrow">→</span> Data & Science</li>
+                        <li><span class="arrow">→</span> Intelligence Géospatiale</li>
+                        <li><span class="arrow">→</span> Souveraineté & Décision</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="quote">
+                <p>"ONE SKY n'est pas un fournisseur d'images, mais un opérateur stratégique de données géospatiales décisionnelles."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Colors Section -->
+    <section id="colors">
+        <div class="container">
+            <div class="section-header">
+                <div class="number">02</div>
+                <h2>PALETTE</h2>
+                <h3>de Couleurs</h3>
+                <div class="line"></div>
+            </div>
+
+            <h4 style="color: var(--cyber-cyan); margin-bottom: 1.5rem; font-size: 0.9rem; letter-spacing: 0.1em;">COULEURS PRINCIPALES</h4>
+            <div class="grid-4">
+                <div class="color-swatch">
+                    <div class="swatch" style="background: #0A0E1A; box-shadow: 0 4px 20px rgba(10, 14, 26, 0.5);"></div>
+                    <div class="name">Deep Space</div>
+                    <div class="hex">#0A0E1A</div>
+                    <div class="usage">Fonds principaux</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch" style="background: #0D1B2A; box-shadow: 0 4px 20px rgba(13, 27, 42, 0.5);"></div>
+                    <div class="name">Midnight Blue</div>
+                    <div class="hex">#0D1B2A</div>
+                    <div class="usage">Fonds secondaires</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch" style="background: #1B263B; box-shadow: 0 4px 20px rgba(27, 38, 59, 0.5);"></div>
+                    <div class="name">Cosmic Blue</div>
+                    <div class="hex">#1B263B</div>
+                    <div class="usage">Éléments UI</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch" style="background: #415A77; box-shadow: 0 4px 20px rgba(65, 90, 119, 0.5);"></div>
+                    <div class="name">Stellar Blue</div>
+                    <div class="hex">#415A77</div>
+                    <div class="usage">Supports</div>
+                </div>
+            </div>
+
+            <h4 style="color: var(--cyber-cyan); margin: 3rem 0 1.5rem; font-size: 0.9rem; letter-spacing: 0.1em;">COULEURS SECONDAIRES</h4>
+            <div class="grid-4">
+                <div class="color-swatch">
+                    <div class="swatch" style="background: #778DA9; box-shadow: 0 4px 20px rgba(119, 141, 169, 0.3);"></div>
+                    <div class="name">Nebula Gray</div>
+                    <div class="hex">#778DA9</div>
+                    <div class="usage">Textes secondaires</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch" style="background: #E0E1DD; box-shadow: 0 4px 20px rgba(224, 225, 221, 0.3);"></div>
+                    <div class="name">Lunar White</div>
+                    <div class="hex">#E0E1DD</div>
+                    <div class="usage">Textes principaux</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch" style="background: #FFFFFF; box-shadow: 0 4px 20px rgba(255, 255, 255, 0.2);"></div>
+                    <div class="name">Pure White</div>
+                    <div class="hex">#FFFFFF</div>
+                    <div class="usage">Accents lumineux</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch" style="background: #C0C5CE; box-shadow: 0 4px 20px rgba(192, 197, 206, 0.3);"></div>
+                    <div class="name">Quantum Silver</div>
+                    <div class="hex">#C0C5CE</div>
+                    <div class="usage">Bordures</div>
+                </div>
+            </div>
+
+            <h4 style="color: var(--cyber-cyan); margin: 3rem 0 1.5rem; font-size: 0.9rem; letter-spacing: 0.1em;">COULEURS D'ACCENT</h4>
+            <div class="grid-4">
+                <div class="color-swatch">
+                    <div class="swatch" style="background: #00D4FF; box-shadow: 0 4px 30px rgba(0, 212, 255, 0.4);"></div>
+                    <div class="name">Cyber Cyan</div>
+                    <div class="hex">#00D4FF</div>
+                    <div class="usage">Couleur signature ★</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch" style="background: #7B2CBF; box-shadow: 0 4px 20px rgba(123, 44, 191, 0.4);"></div>
+                    <div class="name">Aurora Violet</div>
+                    <div class="hex">#7B2CBF</div>
+                    <div class="usage">Accents créatifs</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch" style="background: #FF6B35; box-shadow: 0 4px 20px rgba(255, 107, 53, 0.4);"></div>
+                    <div class="name">Alert Orange</div>
+                    <div class="hex">#FF6B35</div>
+                    <div class="usage">Alertes, warnings</div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch" style="background: #2ECC71; box-shadow: 0 4px 20px rgba(46, 204, 113, 0.4);"></div>
+                    <div class="name">Success Green</div>
+                    <div class="hex">#2ECC71</div>
+                    <div class="usage">Validations</div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 3rem;">
+                <h4>PROPORTIONS RECOMMANDÉES</h4>
+                <div class="color-bar">
+                    <div style="width: 50%; background: #0D1B2A; color: #E0E1DD;">Fonds 50%</div>
+                    <div style="width: 25%; background: #E0E1DD; color: #0A0E1A;">Textes 25%</div>
+                    <div style="width: 15%; background: #00D4FF; color: #0A0E1A;">Accents 15%</div>
+                    <div style="width: 10%; background: #415A77; color: #E0E1DD;">10%</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Typography Section -->
+    <section id="typography">
+        <div class="container">
+            <div class="section-header">
+                <div class="number">03</div>
+                <h2>TYPOGRAPHIE</h2>
+                <h3>Hiérarchie & Styles</h3>
+                <div class="line"></div>
+            </div>
+
+            <div class="grid-2">
+                <div>
+                    <h4 style="color: var(--cyber-cyan); margin-bottom: 1.5rem; font-size: 0.9rem; letter-spacing: 0.1em;">POLICE PRINCIPALE</h4>
+                    <div style="font-size: 4rem; font-weight: 800; margin-bottom: 1rem;">Inter</div>
+                    <p style="color: var(--nebula-gray); margin-bottom: 2rem;">Utilisation: Titres, en-têtes, navigation, éléments d'interface</p>
+                    <div style="font-size: 1.5rem; font-weight: 600; letter-spacing: 0.05em; line-height: 2;">
+                        ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>
+                        abcdefghijklmnopqrstuvwxyz<br>
+                        0123456789
+                    </div>
+                </div>
+                <div>
+                    <h4 style="color: var(--cyber-cyan); margin-bottom: 1.5rem; font-size: 0.9rem; letter-spacing: 0.1em;">HIÉRARCHIE TYPOGRAPHIQUE</h4>
+                    
+                    <div class="typo-sample">
+                        <div class="label">H1 - TITRE PRINCIPAL</div>
+                        <div style="font-size: 2.25rem; font-weight: 700;">ONE SKY DATASAT</div>
+                        <div class="spec">Bold / 36px / Lunar White</div>
+                    </div>
+                    
+                    <div class="typo-sample">
+                        <div class="label">H2 - TITRE SECTION</div>
+                        <div style="font-size: 1.75rem; font-weight: 700;">Intelligence Géospatiale</div>
+                        <div class="spec">Bold / 28px / Lunar White</div>
+                    </div>
+                    
+                    <div class="typo-sample">
+                        <div class="label">H3 - SOUS-TITRE</div>
+                        <div style="font-size: 1.25rem; font-weight: 600; color: var(--cyber-cyan);">Observation & Monitoring</div>
+                        <div class="spec">Semibold / 20px / Cyber Cyan</div>
+                    </div>
+                    
+                    <div class="typo-sample">
+                        <div class="label">BODY - CORPS DE TEXTE</div>
+                        <div style="font-size: 1rem; font-weight: 400;">Exploitez la puissance des données satellitaires pour des décisions stratégiques éclairées.</div>
+                        <div class="spec">Regular / 16px / Lunar White</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Logo Section -->
+    <section id="logo">
+        <div class="container">
+            <div class="section-header">
+                <div class="number">04</div>
+                <h2>LOGO</h2>
+                <h3>& Déclinaisons</h3>
+                <div class="line"></div>
+            </div>
+
+            <div class="logo-grid">
+                <div class="logo-box dark">
+                    <div style="display: flex; align-items: center; gap: 20px;">
+                        <svg width="100" height="50" viewBox="0 0 100 50">
+                            <ellipse cx="50" cy="25" rx="45" ry="15" fill="none" stroke="#00D4FF" stroke-width="1" opacity="0.4"/>
+                            <ellipse cx="50" cy="25" rx="35" ry="12" fill="none" stroke="#00D4FF" stroke-width="1.5" opacity="0.6"/>
+                            <circle cx="50" cy="25" r="12" fill="#1B263B" stroke="#00D4FF" stroke-width="2"/>
+                            <circle cx="78" cy="18" r="4" fill="#00D4FF"/>
+                        </svg>
+                        <span style="font-size: 2rem; font-weight: 700; letter-spacing: 0.1em;">ONE SKY</span>
+                    </div>
+                </div>
+                <div class="logo-box light">
+                    <div style="display: flex; align-items: center; gap: 20px;">
+                        <svg width="100" height="50" viewBox="0 0 100 50">
+                            <ellipse cx="50" cy="25" rx="45" ry="15" fill="none" stroke="#415A77" stroke-width="1" opacity="0.4"/>
+                            <ellipse cx="50" cy="25" rx="35" ry="12" fill="none" stroke="#415A77" stroke-width="1.5" opacity="0.6"/>
+                            <circle cx="50" cy="25" r="12" fill="#E0E1DD" stroke="#1B263B" stroke-width="2"/>
+                            <circle cx="78" cy="18" r="4" fill="#1B263B"/>
+                        </svg>
+                        <span style="font-size: 2rem; font-weight: 700; letter-spacing: 0.1em; color: #1B263B;">ONE SKY</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 2rem;">
+                <h4>RÈGLES D'UTILISATION</h4>
+                <div class="grid-2" style="margin-top: 1rem;">
+                    <ul class="feature-list">
+                        <li><span class="arrow">→</span> Zone d'exclusion: hauteur du "O"</li>
+                        <li><span class="arrow">→</span> Taille minimum print: 25mm</li>
+                        <li><span class="arrow">→</span> Taille minimum digital: 80px</li>
+                    </ul>
+                    <ul class="feature-list">
+                        <li><span class="arrow">→</span> Ne pas déformer le logo</li>
+                        <li><span class="arrow">→</span> Ne pas modifier les couleurs</li>
+                        <li><span class="arrow">→</span> Ne pas ajouter d'effets</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Elements Section -->
+    <section id="elements">
+        <div class="container">
+            <div class="section-header">
+                <div class="number">05</div>
+                <h2>ÉLÉMENTS</h2>
+                <h3>Graphiques</h3>
+                <div class="line"></div>
+            </div>
+
+            <div class="grid-2">
+                <div>
+                    <h4 style="color: var(--cyber-cyan); margin-bottom: 1rem; font-size: 0.9rem; letter-spacing: 0.1em;">MOTIFS ORBITAUX</h4>
+                    <p style="color: var(--nebula-gray); margin-bottom: 1.5rem;">Les orbites elliptiques sont l'élément signature de ONE SKY.</p>
+                    <div class="element-demo">
+                        <div class="orbital-demo">
+                            <div class="orbit" style="width: 200px; height: 80px; animation-duration: 15s;"></div>
+                            <div class="orbit" style="width: 160px; height: 60px; animation-duration: 12s; animation-direction: reverse;"></div>
+                            <div class="orbit" style="width: 120px; height: 45px; animation-duration: 10s;"></div>
+                            <div style="position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; background: var(--cosmic-blue); border: 2px solid var(--cyber-cyan); border-radius: 50%;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <h4 style="color: var(--cyber-cyan); margin-bottom: 1rem; font-size: 0.9rem; letter-spacing: 0.1em;">GRILLES GÉOSPATIALES</h4>
+                    <p style="color: var(--nebula-gray); margin-bottom: 1.5rem;">Grilles cartographiques pour l'analyse territoriale.</p>
+                    <div class="element-demo">
+                        <div class="grid-demo">
+                            <div class="cell"></div><div class="cell"></div><div class="cell active"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                            <div class="cell"></div><div class="cell active"></div><div class="cell"></div><div class="cell"></div><div class="cell active"></div><div class="cell"></div>
+                            <div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell active"></div><div class="cell"></div><div class="cell"></div>
+                            <div class="cell active"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell active"></div>
+                            <div class="cell"></div><div class="cell"></div><div class="cell active"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                            <div class="cell"></div><div class="cell active"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div><div class="cell"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: 3rem;">
+                <h4>DÉGRADÉS AUTORISÉS</h4>
+                <div class="grid-4" style="margin-top: 1.5rem; gap: 1rem;">
+                    <div>
+                        <div style="height: 40px; border-radius: 8px; background: linear-gradient(135deg, #0A0E1A, #0D1B2A);"></div>
+                        <div style="font-size: 0.75rem; color: var(--nebula-gray); margin-top: 8px;">Deep Space → Midnight</div>
+                    </div>
+                    <div>
+                        <div style="height: 40px; border-radius: 8px; background: linear-gradient(135deg, #0D1B2A, #1B263B);"></div>
+                        <div style="font-size: 0.75rem; color: var(--nebula-gray); margin-top: 8px;">Midnight → Cosmic</div>
+                    </div>
+                    <div>
+                        <div style="height: 40px; border-radius: 8px; background: linear-gradient(135deg, #1B263B, #00D4FF);"></div>
+                        <div style="font-size: 0.75rem; color: var(--nebula-gray); margin-top: 8px;">Cosmic → Cyan</div>
+                    </div>
+                    <div>
+                        <div style="height: 40px; border-radius: 8px; background: linear-gradient(135deg, #00D4FF, #7B2CBF);"></div>
+                        <div style="font-size: 0.75rem; color: var(--nebula-gray); margin-top: 8px;">Cyan → Violet</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Do's and Don'ts Section -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <div class="number">06</div>
+                <h2>DO'S</h2>
+                <h3>& Don'ts</h3>
+                <div class="line"></div>
+            </div>
+
+            <div class="do-dont">
+                <div class="do card">
+                    <h4 style="font-size: 1.25rem;">✓ À FAIRE</h4>
+                    <ul>
+                        <li>Utiliser les couleurs de la palette officielle</li>
+                        <li>Respecter les zones d'exclusion du logo</li>
+                        <li>Maintenir le contraste WCAG AAA</li>
+                        <li>Utiliser les typographies définies</li>
+                        <li>Appliquer les dégradés autorisés</li>
+                        <li>Privilégier les visuels satellites authentiques</li>
+                    </ul>
+                </div>
+                <div class="dont card">
+                    <h4 style="font-size: 1.25rem;">✗ À ÉVITER</h4>
+                    <ul>
+                        <li>Modifier les couleurs du logo</li>
+                        <li>Déformer ou incliner le logo</li>
+                        <li>Utiliser des effets (ombre, biseautage)</li>
+                        <li>Placer le logo sur des fonds complexes</li>
+                        <li>Mélanger les polices non autorisées</li>
+                        <li>Utiliser des images SF génériques</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="logo">
+            <svg width="80" height="40" viewBox="0 0 100 50">
+                <ellipse cx="50" cy="25" rx="45" ry="15" fill="none" stroke="#00D4FF" stroke-width="1" opacity="0.4"/>
+                <ellipse cx="50" cy="25" rx="35" ry="12" fill="none" stroke="#00D4FF" stroke-width="1.5" opacity="0.6"/>
+                <circle cx="50" cy="25" r="12" fill="#1B263B" stroke="#00D4FF" stroke-width="2"/>
+                <circle cx="78" cy="18" r="4" fill="#00D4FF"/>
+            </svg>
+            <div style="font-size: 1.5rem; font-weight: 700; letter-spacing: 0.15em; margin-top: 1rem;">ONE SKY</div>
+        </div>
+        <p class="tagline">Intelligence Géospatiale Décisionnelle</p>
+        <div style="width: 120px; height: 2px; background: linear-gradient(90deg, transparent, var(--cyber-cyan), transparent); margin: 1.5rem auto;"></div>
+        <p class="contact">
+            www.onesky.space<br>
+            contact@onesky.space
+        </p>
+        <p class="copyright">
+            © 2026 ONE SKY. Tous droits réservés.<br>
+            Document confidentiel - Usage interne et partenaires autorisés
+        </p>
+    </footer>
+
+    <script>
+        // Generate stars
+        const starsContainer = document.getElementById('stars');
+        for (let i = 0; i < 150; i++) {
+            const star = document.createElement('div');
+            star.className = 'star';
+            star.style.left = Math.random() * 100 + '%';
+            star.style.top = Math.random() * 100 + '%';
+            star.style.width = (Math.random() * 2 + 0.5) + 'px';
+            star.style.height = star.style.width;
+            star.style.animationDelay = Math.random() * 3 + 's';
+            star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+            starsContainer.appendChild(star);
+        }
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const target = document.querySelector(link.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

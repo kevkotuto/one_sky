@@ -1,0 +1,68 @@
+<svg viewBox="0 0 256 256" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background -->
+  <rect width="256" height="256" fill="#0A0E1A"/>
+
+  <defs>
+    <radialGradient id="glow-apple">
+      <stop offset="0%" stop-color="#00D4FF" stop-opacity="0.6" />
+      <stop offset="100%" stop-color="#00D4FF" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <!-- Glow effect behind -->
+  <circle
+    cx="128"
+    cy="128"
+    r="85"
+    fill="url(#glow-apple)"
+    opacity="0.7"
+  />
+
+  <!-- Single simplified orbit -->
+  <circle
+    cx="128"
+    cy="128"
+    r="70"
+    fill="none"
+    stroke="#00D4FF"
+    stroke-width="3"
+    opacity="0.5"
+  />
+
+  <!-- Central sphere (main element) -->
+  <circle
+    cx="128"
+    cy="128"
+    r="45"
+    fill="#1B263B"
+    stroke="#00D4FF"
+    stroke-width="5"
+  />
+
+  <!-- Inner circle detail -->
+  <circle
+    cx="128"
+    cy="128"
+    r="32"
+    fill="none"
+    stroke="#415A77"
+    stroke-width="2"
+  />
+
+  <!-- Orbiting satellite (larger for visibility) -->
+  <circle
+    cx="180"
+    cy="95"
+    r="10"
+    fill="#00D4FF"
+  />
+
+  <!-- Satellite glow -->
+  <circle
+    cx="180"
+    cy="95"
+    r="14"
+    fill="#00D4FF"
+    opacity="0.4"
+  />
+</svg>

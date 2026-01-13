@@ -1,0 +1,143 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* ONE SKY Color Palette */
+  --color-deep-space: #0A0E1A;
+  --color-midnight-blue: #0D1B2A;
+  --color-cosmic-blue: #1B263B;
+  --color-stellar-blue: #415A77;
+  --color-nebula-gray: #778DA9;
+  --color-lunar-white: #E0E1DD;
+  --color-quantum-silver: #C0C5CE;
+  --color-cyber-cyan: #00D4FF;
+  --color-aurora-violet: #7B2CBF;
+  --color-alert-orange: #FF6B35;
+  --color-success-green: #2ECC71;
+
+  /* Border Radius */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+
+  /* Animations */
+  --animate-orbit: orbit 20s linear infinite;
+  --animate-pulse-slow: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-fade-in: fadeIn 0.5s ease-in;
+  --animate-slide-up: slideUp 0.5s ease-out;
+}
+
+:root {
+  --background: var(--color-deep-space);
+  --foreground: var(--color-lunar-white);
+}
+
+@layer base {
+  * {
+    @apply border-stellar-blue/30 outline-cyber-cyan/50;
+  }
+
+  body {
+    @apply bg-deep-space text-lunar-white antialiased;
+    font-family: 'Inter', 'SF Pro Display', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-lunar-white font-bold;
+  }
+
+  h1 {
+    @apply text-5xl leading-tight tracking-tight;
+  }
+
+  h2 {
+    @apply text-4xl leading-tight;
+  }
+
+  h3 {
+    @apply text-2xl font-semibold text-cyber-cyan;
+  }
+
+  p {
+    @apply text-base leading-relaxed text-lunar-white;
+  }
+
+  a {
+    @apply text-cyber-cyan hover:text-cyber-cyan/80 transition-colors duration-200;
+  }
+}
+
+@layer utilities {
+  /* Custom Animations */
+  @keyframes orbit {
+    0% {
+      transform: rotate(0deg) translateX(100px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(100px) rotate(-360deg);
+    }
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    0% {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes scan {
+    0% {
+      top: 0%;
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    90% {
+      opacity: 1;
+    }
+    100% {
+      top: 100%;
+      opacity: 0;
+    }
+  }
+
+  .animate-orbit {
+    animation: orbit 20s linear infinite;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out;
+  }
+
+  /* Backdrop Blur Utilities */
+  .backdrop-blur-custom {
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
