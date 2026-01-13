@@ -1,4 +1,4 @@
-import { CheckCircle, Zap, TrendingUp, Grid, FileText, Map, AlertCircle } from 'lucide-react'
+import { CheckCircle, Zap, TrendingUp, Grid, FileText, Map, AlertCircle, MapPin } from 'lucide-react'
 import PageHeader from '@/components/ui/PageHeader'
 import Section from '@/components/ui/Section'
 import Card from '@/components/ui/Card'

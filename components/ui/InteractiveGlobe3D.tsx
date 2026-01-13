@@ -32,7 +32,7 @@ export default function InteractiveGlobe3D({
   showSatellites = true,
   showCoverage = true
 }: InteractiveGlobe3DProps) {
-  const globeEl = useRef<any>()
+  const globeEl = useRef<any>(null)
   const [satellites, setSatellites] = useState<SatelliteData[]>([])
   const [arcsData, setArcsData] = useState<any[]>([])
 
@@ -141,8 +141,6 @@ export default function InteractiveGlobe3D({
         objectLng="lng"
         objectAltitude="alt"
         objectLabel="label"
-        objectColor="color"
-        objectRadius={1.5}
 
         // Coverage arcs
         arcsData={showCoverage ? arcsData : []}
@@ -165,9 +163,7 @@ export default function InteractiveGlobe3D({
         }
         pointLat="lat"
         pointLng="lng"
-        pointColor="color"
         pointAltitude={0}
-        pointRadius="size"
         pointLabel="label"
       />
 
