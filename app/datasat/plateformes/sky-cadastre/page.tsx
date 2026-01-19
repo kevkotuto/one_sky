@@ -66,6 +66,7 @@ export default function SkyCadastrePage() {
         subtitle="PLATEFORME"
         title="SKY CADASTRE"
         description="Système cadastral satellitaire pour la cartographie automatisée des parcelles, gestion foncière, optimisation fiscale et aménagement du territoire."
+        backgroundImage="/images/header-backgrounds/sky_urban.png"
       />
 
       <Section>
@@ -108,7 +109,7 @@ export default function SkyCadastrePage() {
           <div className="bg-cosmic-blue/30 rounded-xl p-6 border border-stellar-blue/30">
             <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80&fit=crop"
+                src="/images/features/sky_cadastre_feature.png"
                 alt="Vue aérienne cadastrale - Segmentation parcellaire"
                 className="w-full h-full object-cover"
               />
@@ -134,8 +135,8 @@ export default function SkyCadastrePage() {
           description="Comparez l'état initial de la parcelle (avant) avec la nouvelle construction détectée automatiquement (après). L'IA identifie précisément l'emprise au sol, la surface bâtie et la date d'apparition pour régularisation fiscale."
           beforeLabel="Cadastre 2023"
           afterLabel="Satellite 2024"
-          beforeImage="https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?w=1200&q=80&fit=crop"
-          afterImage="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200&q=80&fit=crop"
+          beforeImage="/images/before-after/cadastre_before.png"
+          afterImage="/chatgpt/after Sky Cadastre.png"
           stats={{ detected: 12, precision: 98, changes: 4 }}
         />
       </Section>

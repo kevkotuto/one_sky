@@ -66,6 +66,7 @@ export default function SkyLoupePage() {
         subtitle="PLATEFORME"
         title="SKY LOUPE"
         description="Surveillance automatisée des constructions et vérification de conformité urbanistique par imagerie satellitaire et intelligence artificielle."
+        backgroundImage="/images/header-backgrounds/sky_urban.png"
       />
 
       <Section>
@@ -107,7 +108,7 @@ export default function SkyLoupePage() {
           <div className="bg-cosmic-blue/30 rounded-xl p-6 border border-stellar-blue/30">
             <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80&fit=crop"
+                src="/images/features/sky_loupe_feature.png"
                 alt="Vue aérienne urbaine - Détection de constructions"
                 className="w-full h-full object-cover"
               />
@@ -133,8 +134,8 @@ export default function SkyLoupePage() {
           description="Comparez l'état initial du terrain (avant) avec la détection automatique de la nouvelle construction (après). L'IA identifie précisément l'emprise au sol, la géolocalisation et les caractéristiques du bâtiment."
           beforeLabel="2024-01"
           afterLabel="2024-12"
-          beforeImage="https://images.unsplash.com/photo-1464938050520-ef2270bb8ce8?w=1200&q=80&fit=crop"
-          afterImage="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200&q=80&fit=crop"
+          beforeImage="/chatgpt/befor Sky Loupe .png"
+          afterImage="/chatgpt/after Sky Loupe .png"
           stats={{ detected: 8, precision: 97, changes: 3 }}
         />
       </Section>

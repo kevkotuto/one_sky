@@ -9,15 +9,29 @@ import SpaceBackground from '@/components/ui/SpaceBackground'
 import OrbitalRings from '@/components/ui/OrbitalRings'
 import GeoGrid from '@/components/ui/GeoGrid'
 import AnimatedLogo from '@/components/ui/AnimatedLogo'
+import Image from 'next/image'
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20">
-      {/* Background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-deep-space via-midnight-blue to-deep-space" />
-
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-20 bg-black">
       {/* Animated starfield */}
       <SpaceBackground />
+
+      {/* Globe Image Background */}
+      <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none overflow-hidden">
+        <div className="relative w-full h-full flex items-center justify-center">
+          <div className="relative w-[700px] h-[700px] md:w-[900px] md:h-[900px] lg:w-[1100px] lg:h-[1100px]">
+            {/* Image du globe */}
+            <Image
+              src="/globe.png"
+              alt="Planet Earth"
+              fill
+              className="object-contain animate-[spin_60s_linear_infinite] opacity-60"
+              priority
+            />
+          </div>
+        </div>
+      </div>
 
       {/* Orbital rings */}
       <OrbitalRings />

@@ -108,36 +108,42 @@ export const DATASAT_PLATFORMS = [
     name: 'SKY LOUPE',
     description: 'Suivi des constructions et vérification des permis',
     href: '/datasat/plateformes/sky-loupe',
+    image: '/features/Sky Loupe.png',
   },
   {
     id: 'sky-sentinel',
     name: 'SKY SENTINEL',
     description: 'Observation des frontières et veille territoriale',
     href: '/datasat/plateformes/sky-sentinel',
+    image: '/features/Sky Sentinel.png',
   },
   {
     id: 'sky-forest',
     name: 'SKY FOREST',
     description: 'Surveillance forestière et détection de déforestation',
     href: '/datasat/plateformes/sky-forest',
+    image: '/features/Sky Forest.png',
   },
   {
     id: 'sky-fish',
     name: 'SKY FISH',
     description: 'Observation maritime et surveillance des zones de pêche',
     href: '/datasat/plateformes/sky-fish',
+    image: '/features/Sky Fish.png',
   },
   {
     id: 'sky-cadastre',
     name: 'SKY CADASTRE',
     description: 'Système cadastral satellitaire',
     href: '/datasat/plateformes/sky-cadastre',
+    image: '/features/Sky Cadastre.png',
   },
   {
     id: 'sky-transport',
     name: 'SKY TRANSPORT',
     description: 'Gestion du transport urbain',
     href: '/datasat/plateformes/sky-transport',
+    image: '/features/Sky Transport.png',
   },
 ]
 

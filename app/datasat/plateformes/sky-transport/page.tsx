@@ -66,6 +66,7 @@ export default function SkyTransportPage() {
         subtitle="PLATEFORME"
         title="SKY TRANSPORT"
         description="Analyse intelligente du trafic urbain par satellite pour l'optimisation des transports, la gestion du stationnement et la planification des infrastructures."
+        backgroundImage="/images/header-backgrounds/sky_transport.png"
       />
 
       <Section>
@@ -108,7 +109,7 @@ export default function SkyTransportPage() {
           <div className="bg-cosmic-blue/30 rounded-xl p-6 border border-stellar-blue/30">
             <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?w=1200&q=80&fit=crop"
+                src="/images/features/sky_transport_feature.png"
                 alt="Vue aérienne autoroute - Analyse de trafic"
                 className="w-full h-full object-cover"
               />

@@ -4,19 +4,20 @@ import { useEffect, useRef, useState } from 'react'
 import dynamic from 'next/dynamic'
 
 // Dynamically import Globe to avoid SSR issues
-const Globe = dynamic(() => import('react-globe.gl'), {
+const Globe = dynamic(() => import('react-globe.gl').then(mod => mod.default || mod), {
   ssr: false,
   loading: () => (
-    <div className="flex items-center justify-center" style={{ width: 400, height: 400 }}>
-      <div className="text-cyber-cyan animate-pulse">Chargement du globe 3D...</div>
+    <div className="flex items-center justify-center w-full h-full">
+      <div className="text-cyber-cyan animate-pulse text-sm">Chargement du globe 3D...</div>
     </div>
   )
 })
 
 interface InteractiveGlobe3DProps {
-  size?: number
+  size?: number | string
   showSatellites?: boolean
   showCoverage?: boolean
+  className?: string
 }
 
 interface SatelliteData {
@@ -28,9 +29,10 @@ interface SatelliteData {
 }
 
 export default function InteractiveGlobe3D({
-  size = 400,
+  size = 600,
   showSatellites = true,
-  showCoverage = true
+  showCoverage = true,
+  className = ''
 }: InteractiveGlobe3DProps) {
   const globeEl = useRef<any>(null)
   const [satellites, setSatellites] = useState<SatelliteData[]>([])
@@ -41,6 +43,7 @@ export default function InteractiveGlobe3D({
     if (globeEl.current) {
       globeEl.current.controls().autoRotate = true
       globeEl.current.controls().autoRotateSpeed = 0.5
+      globeEl.current.controls().enableZoom = false
     }
 
     // Generate satellite orbits
@@ -120,16 +123,29 @@ export default function InteractiveGlobe3D({
     }
   }, [showSatellites, showCoverage])
 
+  const globeSize = typeof size === 'number' ? size : 600
+
   return (
-    <div className="relative" style={{ width: size, height: size }}>
+    <div className={`relative ${className}`} style={{ width: globeSize, height: globeSize }}>
+      {/* Fallback - cercle avec effet de profondeur si le globe ne charge pas */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <div
+          className="rounded-full bg-linear-to-br from-cosmic-blue via-stellar-blue to-midnight-blue opacity-20"
+          style={{
+            width: globeSize * 0.6,
+            height: globeSize * 0.6,
+            boxShadow: '0 0 100px rgba(0, 212, 255, 0.3), inset 0 0 50px rgba(0, 212, 255, 0.1)'
+          }}
+        />
+      </div>
+
       <Globe
         ref={globeEl}
-        width={size}
-        height={size}
+        width={globeSize}
+        height={globeSize}
         backgroundColor="rgba(0,0,0,0)"
-        globeImageUrl="//unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
-        bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
-        backgroundImageUrl="//unpkg.com/three-globe/example/img/night-sky.png"
+        globeImageUrl="https://unpkg.com/three-globe/example/img/earth-blue-marble.jpg"
+        bumpImageUrl="https://unpkg.com/three-globe/example/img/earth-topology.png"
 
         // Atmosphere
         atmosphereColor="#00D4FF"
@@ -155,10 +171,10 @@ export default function InteractiveGlobe3D({
         pointsData={
           showCoverage
             ? [
-                { lat: 6.5, lng: 3.4, color: '#00FF96', size: 0.5, label: 'Lagos' },
-                { lat: 48.8, lng: 2.3, color: '#00D4FF', size: 0.5, label: 'Paris' },
-                { lat: 40.7, lng: -74.0, color: '#B94FFF', size: 0.5, label: 'New York' }
-              ]
+              { lat: 6.5, lng: 3.4, color: '#00FF96', size: 0.5, label: 'Lagos' },
+              { lat: 48.8, lng: 2.3, color: '#00D4FF', size: 0.5, label: 'Paris' },
+              { lat: 40.7, lng: -74.0, color: '#B94FFF', size: 0.5, label: 'New York' }
+            ]
             : []
         }
         pointLat="lat"
@@ -171,7 +187,7 @@ export default function InteractiveGlobe3D({
       {showSatellites && (
         <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex flex-wrap justify-center gap-3 text-xs text-nebula-gray bg-midnight-blue/90 backdrop-blur-sm px-4 py-2 rounded-full shadow-lg">
           <div className="flex items-center gap-1.5">
-            <div className="w-2 h-2 rounded-full bg-[#00D4FF] shadow-[0_0_8px_rgba(0,212,255,0.8)]" />
+            <div className="w-2 h-2 rounded-full bg-cyber-cyan shadow-[0_0_8px_rgba(0,212,255,0.8)]" />
             <span className="font-medium">SKY 1</span>
           </div>
           <div className="flex items-center gap-1.5">

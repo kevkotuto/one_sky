@@ -1,9 +1,8 @@
 @import "tailwindcss";
-@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
-@theme inline {
+@theme {
   /* ONE SKY Color Palette */
   --color-deep-space: #0A0E1A;
   --color-midnight-blue: #0D1B2A;
@@ -16,6 +15,17 @@
   --color-aurora-violet: #7B2CBF;
   --color-alert-orange: #FF6B35;
   --color-success-green: #2ECC71;
+
+  /* Font Weights */
+  --font-weight-thin: 100;
+  --font-weight-extralight: 200;
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
 
   /* Border Radius */
   --radius-sm: 0.25rem;
@@ -47,7 +57,8 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply text-lunar-white font-bold;
+    @apply text-lunar-white;
+    font-weight: 700;
   }
 
   h1 {
@@ -59,7 +70,8 @@
   }
 
   h3 {
-    @apply text-2xl font-semibold text-cyber-cyan;
+    @apply text-2xl text-cyber-cyan;
+    font-weight: 600;
   }
 
   p {

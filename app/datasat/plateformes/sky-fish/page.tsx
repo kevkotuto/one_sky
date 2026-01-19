@@ -66,6 +66,7 @@ export default function SkyFishPage() {
         subtitle="PLATEFORME"
         title="SKY FISH"
         description="Surveillance maritime automatisée par satellite et IA pour la détection de navires, surveillance des zones de pêche et monitoring de l'activité portuaire."
+        backgroundImage="/images/header-backgrounds/sky_ocean.png"
       />
 
       <Section>
@@ -108,7 +109,7 @@ export default function SkyFishPage() {
           <div className="bg-cosmic-blue/30 rounded-xl p-6 border border-stellar-blue/30">
             <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&q=80&fit=crop"
+                src="/images/features/sky_fish_feature.png"
                 alt="Vue aérienne maritime - Détection de navires"
                 className="w-full h-full object-cover"
               />
@@ -134,8 +135,8 @@ export default function SkyFishPage() {
           description="Comparez la zone maritime sans surveillance (avant) avec la détection automatique des navires, dont certains sans signal AIS (après). L'IA identifie les navires suspects dans les zones protégées."
           beforeLabel="Sans surveillance"
           afterLabel="Avec détection IA"
-          beforeImage="https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1200&q=80&fit=crop"
-          afterImage="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=1200&q=80&fit=crop"
+          beforeImage="/chatgpt/befor Sky Fish .png"
+          afterImage="/chatgpt/after Sky Fish .png"
           stats={{ detected: 5, precision: 93, changes: 2 }}
         />
       </Section>

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowRight } from 'lucide-react'
 import Section from '@/components/ui/Section'
 import Card from '@/components/ui/Card'
@@ -43,6 +44,16 @@ export default function DataSATPreview() {
                 title={platform.name}
                 description={platform.description}
                 className="h-full"
+                icon={
+                  <div className="relative w-full h-48 mb-4 rounded-lg overflow-hidden">
+                    <Image
+                      src={platform.image}
+                      alt={platform.name}
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                }
               />
             </Link>
           </motion.div>

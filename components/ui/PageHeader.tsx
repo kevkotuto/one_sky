@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import { ReactNode } from 'react'
+import Image from 'next/image'
 import Container from './Container'
 
 interface PageHeaderProps {
@@ -9,15 +10,30 @@ interface PageHeaderProps {
   subtitle?: string
   description?: string
   badge?: string
+  backgroundImage?: string
   children?: ReactNode
 }
 
-export default function PageHeader({ title, subtitle, description, badge, children }: PageHeaderProps) {
+export default function PageHeader({ title, subtitle, description, badge, backgroundImage, children }: PageHeaderProps) {
   return (
-    <section className="relative pt-32 pb-20 overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-b from-midnight-blue via-deep-space to-deep-space" />
-      
-      <div className="absolute inset-0">
+    <section className="relative pt-32 pb-20 overflow-hidden min-h-[400px] flex items-center">
+      <div className="absolute inset-0 bg-gradient-to-b from-midnight-blue via-deep-space to-deep-space z-0" />
+
+      {backgroundImage && (
+        <div className="absolute inset-0 z-0 opacity-40">
+          <Image
+            src={backgroundImage}
+            alt="Background"
+            fill
+            className="object-cover"
+            priority
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-deep-space via-deep-space/80 to-transparent mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-r from-deep-space/90 via-deep-space/50 to-transparent" />
+        </div>
+      )}
+
+      <div className="absolute inset-0 pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 bg-cyber-cyan/5 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-aurora-violet/5 rounded-full blur-3xl" />
       </div>
@@ -34,23 +50,23 @@ export default function PageHeader({ title, subtitle, description, badge, childr
               <span className="text-cyber-cyan text-sm font-medium">{badge}</span>
             </div>
           )}
-          
+
           {subtitle && (
             <p className="text-cyber-cyan font-semibold text-sm uppercase tracking-wider mb-4">
               {subtitle}
             </p>
           )}
-          
+
           <h1 className="text-5xl md:text-6xl font-bold text-lunar-white mb-6">
             {title}
           </h1>
-          
+
           {description && (
             <p className="text-xl text-nebula-gray leading-relaxed">
               {description}
             </p>
           )}
-          
+
           {children}
         </motion.div>
       </Container>

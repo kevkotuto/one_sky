@@ -66,6 +66,7 @@ export default function SkyForestPage() {
         subtitle="PLATEFORME"
         title="SKY FOREST"
         description="Surveillance forestière automatisée par satellite et IA pour la détection de déforestation, feux de forêt et suivi de la santé des écosystèmes."
+        backgroundImage="/images/header-backgrounds/sky_forest.png"
       />
 
       <Section>
@@ -108,7 +109,7 @@ export default function SkyForestPage() {
           <div className="bg-cosmic-blue/30 rounded-xl p-6 border border-stellar-blue/30">
             <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80&fit=crop"
+                src="/images/features/sky_forest_feature.png"
                 alt="Vue aérienne de forêt - Détection de déforestation"
                 className="w-full h-full object-cover"
               />
@@ -134,8 +135,8 @@ export default function SkyForestPage() {
           description="Comparez l'état initial de la forêt (avant) avec la détection automatique des zones déboisées (après). L'IA identifie précisément l'emprise des coupes, leur superficie et leur date estimée."
           beforeLabel="2024-01"
           afterLabel="2024-12"
-          beforeImage="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1200&q=80&fit=crop"
-          afterImage="https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=1200&q=80&fit=crop"
+          beforeImage="/chatgpt/befor Sky Forest.png"
+          afterImage="/chatgpt/after Sky Forest.png"
           stats={{ detected: 6, precision: 95, changes: 14 }}
         />
       </Section>

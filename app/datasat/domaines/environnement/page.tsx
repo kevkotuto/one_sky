@@ -7,7 +7,8 @@ export default function EnvironnementPage() {
   return (
     <>
       <PageHeader badge="DataSAT" subtitle="DOMAINE" title="Environnement & Climat"
-        description="Solutions pour le monitoring environnemental et la lutte contre le changement climatique." />
+        description="Solutions pour le monitoring environnemental et la lutte contre le changement climatique."
+        backgroundImage="/images/header-backgrounds/sky_forest.png" />
       <Section>
         <div className="grid md:grid-cols-3 gap-8">
           <Card icon={<Leaf size={32} />} title="Déforestation" description="Surveillance des forêts" />

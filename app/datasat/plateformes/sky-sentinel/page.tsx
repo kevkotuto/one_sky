@@ -66,6 +66,7 @@ export default function SkySentinelPage() {
         subtitle="PLATEFORME"
         title="SKY SENTINEL"
         description="Surveillance stratégique par satellite pour la sécurité des frontières, la protection des infrastructures critiques et la détection d'activités suspectes."
+        backgroundImage="/images/header-backgrounds/sky_security.png"
       />
 
       <Section>
@@ -108,7 +109,7 @@ export default function SkySentinelPage() {
           <div className="bg-cosmic-blue/30 rounded-xl p-6 border border-stellar-blue/30">
             <div className="relative h-[400px] w-full rounded-lg overflow-hidden">
               <img
-                src="https://images.unsplash.com/photo-1473163928189-364b2c4e1135?w=1200&q=80&fit=crop"
+                src="/images/features/sky_sentinel_feature.png"
                 alt="Vue aérienne infrastructure - Surveillance sécuritaire"
                 className="w-full h-full object-cover"
               />
@@ -134,8 +135,8 @@ export default function SkySentinelPage() {
           description="Comparez l'état initial de la zone surveillée (avant) avec la détection automatique de nouveaux éléments ou activités (après). L'IA identifie précisément les changements, leur nature et leur date d'apparition."
           beforeLabel="État initial"
           afterLabel="Changements détectés"
-          beforeImage="https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=1200&q=80&fit=crop"
-          afterImage="https://images.unsplash.com/photo-1473163928189-364b2c4e1135?w=1200&q=80&fit=crop"
+          beforeImage="/images/before-after/sentinel_before.png"
+          afterImage="/images/before-after/sentinel_after.png"
           stats={{ detected: 8, precision: 96, changes: 5 }}
         />
       </Section>

@@ -7,9 +7,10 @@ export default function DomainPage() {
   return (
     <>
       <PageHeader badge="DataSAT" subtitle="DOMAINE" title="agriculture"
-        description="Solutions géospatiales pour le secteur agriculture." />
+        description="Solutions géospatiales pour le secteur agriculture."
+        backgroundImage="/images/header-backgrounds/sky_agriculture.png" />
       <Section>
-        <Card icon={<CheckCircle size={32} />} title="Cas d'usage" 
+        <Card icon={<CheckCircle size={32} />} title="Cas d'usage"
           description="Applications spécifiques au domaine" />
       </Section>
     </>
