@@ -16,7 +16,7 @@ const pocSchema = z.object({
   organization: z.string().min(2, 'Organisation requise'),
   phone: z.string().optional(),
   platform: z.string().min(1, 'Sélectionnez une plateforme'),
-  useCase: z.string().min(20, 'Décrivez votre cas d\'usage (min 20 caractères)'),
+  useCase: z.string().min(20, 'Décrivez votre cas d'usage (min 20 caractères)'),
 })
 
 type POCForm = z.infer<typeof pocSchema>
@@ -69,7 +69,7 @@ export default function POCPage() {
               <h2 className="text-2xl font-bold text-lunar-white mb-4">Demande envoyée !</h2>
               <p className="text-nebula-gray">
                 Merci pour votre demande de POC. Notre équipe vous contactera sous 24-48h pour planifier 
-                l\'atelier de cadrage.
+                l'atelier de cadrage.
               </p>
             </div>
           </div>
@@ -124,7 +124,7 @@ export default function POCPage() {
                 </div>
 
                 <div>
-                  <label className="block text-lunar-white mb-2 font-medium">Plateforme d\'intérêt *</label>
+                  <label className="block text-lunar-white mb-2 font-medium">Plateforme d'intérêt *</label>
                   <select
                     {...register('platform')}
                     className="w-full px-4 py-3 bg-midnight-blue border border-stellar-blue/30 rounded-lg text-lunar-white focus:border-cyber-cyan focus:outline-none"
@@ -136,7 +136,7 @@ export default function POCPage() {
                 </div>
 
                 <div>
-                  <label className="block text-lunar-white mb-2 font-medium">Cas d\'usage *</label>
+                  <label className="block text-lunar-white mb-2 font-medium">Cas d'usage *</label>
                   <textarea
                     {...register('useCase')}
                     rows={5}

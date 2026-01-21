@@ -6,7 +6,7 @@ import Card from '@/components/ui/Card'
 const apis = [
   { icon: <Code size={32} />, title: 'REST & GraphQL', description: 'APIs modernes et documentées' },
   { icon: <Database size={32} />, title: 'Données Structurées', description: 'GeoJSON, WMS, WFS' },
-  { icon: <Lock size={32} />, title: 'Authentification OAuth2', description: 'Sécurité et contrôle d\'accès' },
+  { icon: <Lock size={32} />, title: 'Authentification OAuth2', description: 'Sécurité et contrôle d'accès' },
   { icon: <Zap size={32} />, title: 'Temps Réel', description: 'WebSockets et webhooks' },
 ]
 

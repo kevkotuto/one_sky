@@ -8,7 +8,7 @@ import BeforeAfterSlider from '@/components/ui/BeforeAfterSlider'
 const useCases = [
   {
     title: 'Détection de Déforestation',
-    description: 'Identification automatique des zones de coupe forestière, légale ou illégale, sur l\'ensemble du territoire',
+    description: 'Identification automatique des zones de coupe forestière, légale ou illégale, sur l'ensemble du territoire',
     metrics: [
       { label: 'Détection', value: '95% précision' },
       { label: 'Surface min.', value: '0.5 hectare' },

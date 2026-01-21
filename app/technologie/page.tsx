@@ -12,7 +12,7 @@ const techSections = [
   },
   {
     icon: <Workflow size={32} />, title: 'Chaîne de Valeur',
-    description: 'Du capteur satellitaire à l\'insight décisionnel, notre pipeline de bout en bout',
+    description: 'Du capteur satellitaire à l'insight décisionnel, notre pipeline de bout en bout',
     href: '/technologie/chaine-valeur'
   },
   {

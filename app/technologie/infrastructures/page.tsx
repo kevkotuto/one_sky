@@ -8,7 +8,7 @@ import Globe3D from '@/components/ui/Globe3D'
 const satellites = [
   {
     name: 'SKY 1',
-    purpose: 'Satellite de communication et transmission de données en orbite basse, assurant la connectivité continue entre les satellites d\'observation et les stations sol.',
+    purpose: 'Satellite de communication et transmission de données en orbite basse, assurant la connectivité continue entre les satellites d'observation et les stations sol.',
     status: 'operational' as const,
     icon: 'communication' as const,
     specs: [
@@ -32,7 +32,7 @@ const satellites = [
   },
   {
     name: 'SKY 3',
-    purpose: 'Satellite d\'observation de la Terre haute résolution, équipé de capteurs optiques et radar pour une surveillance continue, jour et nuit, dans toutes conditions météo.',
+    purpose: 'Satellite d'observation de la Terre haute résolution, équipé de capteurs optiques et radar pour une surveillance continue, jour et nuit, dans toutes conditions météo.',
     status: 'operational' as const,
     icon: 'observation' as const,
     specs: [
@@ -50,7 +50,7 @@ const infrastructure = [
   { icon: <Database size={32} />, title: 'Data Centers Souverains',
     description: 'Infrastructure cloud souveraine certifiée SecNumCloud pour le stockage et le traitement des données sensibles avec garantie de localisation.' },
   { icon: <Shield size={32} />, title: 'Sécurité de Bout en Bout',
-    description: 'Chiffrement des transmissions satellite-sol, contrôles d\'accès stricts, traçabilité complète et conformité aux standards internationaux.' },
+    description: 'Chiffrement des transmissions satellite-sol, contrôles d'accès stricts, traçabilité complète et conformité aux standards internationaux.' },
 ]
 
 export default function InfrastructuresPage() {

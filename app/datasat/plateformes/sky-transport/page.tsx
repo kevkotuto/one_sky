@@ -8,7 +8,7 @@ import BeforeAfterSlider from '@/components/ui/BeforeAfterSlider'
 const useCases = [
   {
     title: 'Analyse Trafic & Flux Urbains',
-    description: 'Comptage automatique de véhicules, analyse des flux de circulation et identification des points de congestion sur l\'ensemble du réseau routier',
+    description: 'Comptage automatique de véhicules, analyse des flux de circulation et identification des points de congestion sur l'ensemble du réseau routier',
     metrics: [
       { label: 'Précision', value: '94% comptage' },
       { label: 'Couverture', value: '100% réseau' },
@@ -17,7 +17,7 @@ const useCases = [
   },
   {
     title: 'Monitoring Parkings & Stationnement',
-    description: 'Surveillance automatique des taux d\'occupation des parkings publics et zones de stationnement pour optimiser la gestion et les tarifs',
+    description: 'Surveillance automatique des taux d'occupation des parkings publics et zones de stationnement pour optimiser la gestion et les tarifs',
     metrics: [
       { label: 'Places', value: '&gt;10 000' },
       { label: 'Taux occupation', value: 'Temps réel' },
@@ -49,7 +49,7 @@ const benefits = [
   {
     icon: <TrendingUp size={32} />,
     title: 'ROI Infrastructure',
-    description: '+15-25% d\'efficacité sur investissements grâce à planification data-driven'
+    description: '+15-25% d'efficacité sur investissements grâce à planification data-driven'
   },
   {
     icon: <Zap size={32} />,

@@ -11,7 +11,7 @@ const platform = [
   { icon: <Database size={32} />, title: 'Data Lake', 
     description: 'Stockage et indexation de pétaoctets de données géospatiales' },
   { icon: <Shield size={32} />, title: 'Sécurité', 
-    description: 'Chiffrement bout-en-bout et contrôle d\'accès granulaire' },
+    description: 'Chiffrement bout-en-bout et contrôle d'accès granulaire' },
   { icon: <Zap size={32} />, title: 'Temps Réel', 
     description: 'Streaming de données et alertes instantanées' },
   { icon: <Globe size={32} />, title: 'Multi-Tenancy', 

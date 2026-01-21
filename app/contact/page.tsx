@@ -65,7 +65,7 @@ export default function ContactPage() {
               <CheckCircle size={48} className="text-success-green mx-auto mb-4" />
               <h2 className="text-2xl font-bold text-lunar-white mb-4">Message envoyé !</h2>
               <p className="text-nebula-gray">
-                Merci pour votre message. Notre équipe vous répondra dans les plus brefs délais, 
+                Merci pour votre message. Notre équipe vous répondra dans les plus brefs délais,
                 généralement sous 24-48 heures.
               </p>
             </div>
@@ -74,7 +74,7 @@ export default function ContactPage() {
           <div className="max-w-3xl mx-auto">
             <div className="bg-cosmic-blue/50 backdrop-blur-sm border border-stellar-blue/30 rounded-lg p-8">
               <h2 className="text-2xl font-bold text-lunar-white mb-6">Envoyez-nous un message</h2>
-              
+
               <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>

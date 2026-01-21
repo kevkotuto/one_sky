@@ -17,7 +17,7 @@ const useCases = [
   },
   {
     title: 'Détection Changements Parcellaires',
-    description: 'Monitoring automatique des modifications parcellaires : divisions, fusions, constructions, extensions, changements d\'usage',
+    description: 'Monitoring automatique des modifications parcellaires : divisions, fusions, constructions, extensions, changements d'usage',
     metrics: [
       { label: 'Changement min.', value: '10m²' },
       { label: 'Couverture', value: '100%' },

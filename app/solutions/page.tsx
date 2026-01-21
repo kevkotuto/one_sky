@@ -7,7 +7,7 @@ import Card from '@/components/ui/Card'
 const solutions = [
   {
     icon: <Eye size={32} />, title: 'Observation & Monitoring', href: '/solutions/observation',
-    description: 'Surveillance continue de zones d\'intérêt critiques'
+    description: 'Surveillance continue de zones d'intérêt critiques'
   },
   {
     icon: <BarChart size={32} />, title: 'Analyses & Indicateurs', href: '/solutions/analyses',
@@ -27,7 +27,7 @@ const solutions = [
   },
   {
     icon: <Map size={32} />, title: 'Parcours Projet', href: '/solutions/parcours',
-    description: 'Méthodologie d\'implémentation éprouvée'
+    description: 'Méthodologie d'implémentation éprouvée'
   },
   {
     icon: <Building size={32} />, title: 'Par Secteur', href: '/solutions/secteurs',

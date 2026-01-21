@@ -11,7 +11,7 @@ const engagements = [
   { icon: <Heart size={32} />, title: 'Responsabilité Sociale', 
     description: 'Support aux ONG et organisations humanitaires pour leurs missions critiques' },
   { icon: <Award size={32} />, title: 'Éthique', 
-    description: 'Utilisation responsable de l\'IA et respect des réglementations internationales' },
+    description: 'Utilisation responsable de l'IA et respect des réglementations internationales' },
 ]
 
 export default function EngagementsPage() {
