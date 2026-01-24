@@ -4,10 +4,10 @@ import Section from '@/components/ui/Section'
 import Card from '@/components/ui/Card'
 
 const features = [
-  { icon: <Eye size={32} />, title: 'Surveillance 24/7', 
-    description: 'Monitoring continu de vos zones d'intérêt critiques' },
-  { icon: <MapPin size={32} />, title: 'Géolocalisation Précise', 
-    description: 'Résolution jusqu'à 25cm pour une précision maximale' },
+  { icon: <Eye size={32} />, title: 'Surveillance 24/7',
+    description: "Monitoring continu de vos zones d'intérêt critiques" },
+  { icon: <MapPin size={32} />, title: 'Géolocalisation Précise',
+    description: "Résolution jusqu'à 25cm pour une précision maximale" },
   { icon: <Clock size={32} />, title: 'Historique Complet', 
     description: 'Accès aux archives pour analyse temporelle' },
   { icon: <Camera size={32} />, title: 'Multi-Spectral', 

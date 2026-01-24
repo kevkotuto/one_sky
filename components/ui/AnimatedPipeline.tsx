@@ -8,7 +8,7 @@ const steps = [
     icon: Satellite,
     title: 'Acquisition',
     subtitle: 'Capture satellitaire',
-    description: 'Images haute résolution depuis l'orbite LEO',
+    description: "Images haute résolution depuis l'orbite LEO",
     details: ['Planning des prises de vue', 'Collecte des données', 'Transmission sol']
   },
   {
@@ -29,8 +29,8 @@ const steps = [
     icon: TrendingUp,
     title: 'Analyse',
     subtitle: 'Intelligence IA',
-    description: 'Extraction automatique d'informations',
-    details: ['Détection d'objets', 'Classification', 'Détection de changements']
+    description: "Extraction automatique d'informations",
+    details: ["Détection d'objets", 'Classification', 'Détection de changements']
   },
   {
     icon: Database,

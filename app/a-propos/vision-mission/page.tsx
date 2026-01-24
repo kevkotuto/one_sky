@@ -7,17 +7,17 @@ const missions = [
   {
     icon: <Eye size={32} />,
     title: 'Observer',
-    description: 'Déployer une infrastructure satellitaire souveraine pour l'observation continue de la Terre',
+    description: "Déployer une infrastructure satellitaire souveraine pour l'observation continue de la Terre",
   },
   {
     icon: <Target size={32} />,
     title: 'Analyser',
-    description: 'Transformer les données brutes en indicateurs décisionnels grâce à l'IA',
+    description: "Transformer les données brutes en indicateurs décisionnels grâce à l'IA",
   },
   {
     icon: <Rocket size={32} />,
     title: 'Accélérer',
-    description: 'Permettre aux décideurs d'agir plus vite avec des insights en temps réel',
+    description: "Permettre aux décideurs d'agir plus vite avec des insights en temps réel",
   },
   {
     icon: <Globe size={32} />,
@@ -33,7 +33,7 @@ const values = [
   },
   {
     title: 'Excellence Technologique',
-    description: 'Innovation constante dans le spatial, l'IA et l'analyse de données',
+    description: "Innovation constante dans le spatial, l'IA et l'analyse de données",
   },
   {
     title: 'Orientation Client',

@@ -48,7 +48,7 @@ export const NAVIGATION = {
       href: '/datasat',
       children: [
         { name: 'Intelligence & IA', href: '/datasat/intelligence-ia', description: 'Analyses par IA embarquée' },
-        { name: 'Domaines', href: '/datasat/domaines', description: 'Domaines d'application' },
+        { name: 'Domaines', href: '/datasat/domaines', description: "Domaines d'application" },
         { name: 'SKY LOUPE', href: '/datasat/plateformes/sky-loupe', description: 'Contrôle urbanistique' },
         { name: 'SKY FOREST', href: '/datasat/plateformes/sky-forest', description: 'Surveillance forestière' },
         { name: 'SKY FISH', href: '/datasat/plateformes/sky-fish', description: 'Surveillance maritime' },

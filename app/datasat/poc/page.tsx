@@ -16,7 +16,7 @@ const pocSchema = z.object({
   organization: z.string().min(2, 'Organisation requise'),
   phone: z.string().optional(),
   platform: z.string().min(1, 'Sélectionnez une plateforme'),
-  useCase: z.string().min(20, 'Décrivez votre cas d'usage (min 20 caractères)'),
+  useCase: z.string().min(20, "Décrivez votre cas d'usage (min 20 caractères)"),
 })
 
 type POCForm = z.infer<typeof pocSchema>

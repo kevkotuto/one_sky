@@ -7,7 +7,7 @@ const analytics = [
   { icon: <BarChart size={32} />, title: 'KPIs Personnalisés', description: 'Indicateurs adaptés à vos objectifs' },
   { icon: <TrendingUp size={32} />, title: 'Analyses Temporelles', description: 'Évolution et tendances sur le temps' },
   { icon: <PieChart size={32} />, title: 'Statistiques Avancées', description: 'Agrégations et distributions spatiales' },
-  { icon: <Activity size={32} />, title: 'Détection d'Anomalies', description: 'IA pour identifier les changements' },
+  { icon: <Activity size={32} />, title: "Détection d'Anomalies", description: 'IA pour identifier les changements' },
 ]
 
 export default function AnalysesPage() {

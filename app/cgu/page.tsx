@@ -3,7 +3,7 @@ import Section from '@/components/ui/Section'
 
 export const metadata = {
   title: 'CGU - ONE SKY',
-  description: 'Conditions générales d'utilisation'
+  description: "Conditions générales d'utilisation"
 }
 
 export default function CGUPage() {

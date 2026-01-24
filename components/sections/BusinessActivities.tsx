@@ -11,7 +11,7 @@ const activities = [
     id: 'onesky',
     title: 'OnesSKY',
     subtitle: 'Acteur clé de la nouvelle économie spatiale',
-    description: 'Nous intervenons dans le domaine de l'imagerie satellite, spécialisée dans la fourniture de données géospatiales. Grace à son satellite SKY3, OnesSKY capture des images quotidiennes de l'ensemble de la surface terrestre africaine, permettant un suivi précis et en temps réel.',
+    description: "Nous intervenons dans le domaine de l'imagerie satellite, spécialisée dans la fourniture de données géospatiales. Grace à son satellite SKY3, OnesSKY capture des images quotidiennes de l'ensemble de la surface terrestre africaine, permettant un suivi précis et en temps réel.",
     icon: <Satellite className="w-12 h-12" />,
     href: '/a-propos/onesky',
     color: 'from-cyber-cyan to-aurora-violet'
@@ -20,7 +20,7 @@ const activities = [
     id: 'datasat',
     title: 'DataSAT',
     subtitle: 'Intelligence Artificielle & Imagerie Satellite',
-    description: 'DataSAT est une filiale de la société Ones-SKY spécialisée dans la mise en place de solutions basées sur l'Intelligence Artificielle et l'imagerie par satellite. Elle intervient en Afrique dans la distribution des produits d'imagerie satellitaires.',
+    description: "DataSAT est une filiale de la société Ones-SKY spécialisée dans la mise en place de solutions basées sur l'Intelligence Artificielle et l'imagerie par satellite. Elle intervient en Afrique dans la distribution des produits d'imagerie satellitaires.",
     icon: <Globe className="w-12 h-12" />,
     href: '/datasat',
     color: 'from-aurora-violet to-cyber-cyan'
@@ -29,7 +29,7 @@ const activities = [
     id: 'upconnect',
     title: 'UpConnect',
     subtitle: 'Connectivité Haut Débit par Satellite',
-    description: 'OnesSKY se spécialise également dans la fourniture d'accès à Internet haut débit par satellite via une constellation en orbite basse (LEO). Notre objectif est de connecter les régions les plus reculées d'Afrique en offrant des services de connectivité fiable et à faible latence.',
+    description: "OnesSKY se spécialise également dans la fourniture d'accès à Internet haut débit par satellite via une constellation en orbite basse (LEO). Notre objectif est de connecter les régions les plus reculées d'Afrique en offrant des services de connectivité fiable et à faible latence.",
     icon: <Wifi className="w-12 h-12" />,
     href: '/a-propos/upconnect',
     color: 'from-cyber-cyan to-stellar-blue'

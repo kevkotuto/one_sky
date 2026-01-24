@@ -14,7 +14,7 @@ const features = [
   {
     icon: <Brain size={32} />,
     title: 'Intelligence Artificielle',
-    description: 'Analyses automatisées et détection d'anomalies par IA pour des insights en temps réel.',
+    description: "Analyses automatisées et détection d'anomalies par IA pour des insights en temps réel.",
   },
   {
     icon: <Zap size={32} />,

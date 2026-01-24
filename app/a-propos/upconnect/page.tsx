@@ -12,7 +12,7 @@ const features = [
   {
     icon: <Globe size={32} />,
     title: 'Couverture Totale',
-    description: 'Connexion haut débit dans les zones les plus reculées d'Afrique, là où les infrastructures terrestres font défaut'
+    description: "Connexion haut débit dans les zones les plus reculées d'Afrique, là où les infrastructures terrestres font défaut"
   },
   {
     icon: <Shield size={32} />,
@@ -40,7 +40,7 @@ const clients = [
   {
     icon: <Globe size={32} />,
     title: 'Communautés Rurales',
-    description: 'Accès à Internet pour l'éducation, la santé et le développement économique local'
+    description: "Accès à Internet pour l'éducation, la santé et le développement économique local"
   }
 ]
 

@@ -8,7 +8,7 @@ import BeforeAfterSlider from '@/components/ui/BeforeAfterSlider'
 const useCases = [
   {
     title: 'Contrôle Urbanistique Automatisé',
-    description: 'Détection automatique des nouvelles constructions sur l'ensemble du territoire municipal',
+    description: "Détection automatique des nouvelles constructions sur l'ensemble du territoire municipal",
     metrics: [
       { label: 'Détection', value: '97% précision' },
       { label: 'Couverture', value: '100% territoire' },
@@ -26,7 +26,7 @@ const useCases = [
   },
   {
     title: 'Suivi Évolution Urbaine',
-    description: 'Analyse multi-temporelle pour comprendre la dynamique d'urbanisation',
+    description: "Analyse multi-temporelle pour comprendre la dynamique d'urbanisation",
     metrics: [
       { label: 'Historique', value: '5+ années' },
       { label: 'Tendances', value: 'Prédictives' },

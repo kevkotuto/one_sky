@@ -9,7 +9,7 @@ const sections = [
   {
     icon: <Target size={32} />,
     title: 'Vision & Mission',
-    description: 'Notre raison d'être et notre vision pour l'avenir de l'intelligence géospatiale',
+    description: "Notre raison d'être et notre vision pour l'avenir de l'intelligence géospatiale",
     href: '/a-propos/vision-mission',
   },
   {
@@ -33,7 +33,7 @@ const sections = [
   {
     icon: <Briefcase size={32} />,
     title: 'Carrières',
-    description: 'Rejoignez une équipe qui façonne l'avenir de l'observation spatiale',
+    description: "Rejoignez une équipe qui façonne l'avenir de l'observation spatiale",
     href: '/a-propos/carrieres',
   },
 ]

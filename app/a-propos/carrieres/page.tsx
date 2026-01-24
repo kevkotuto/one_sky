@@ -11,7 +11,7 @@ const roles = [
   { icon: <Code size={32} />, title: 'Développeurs Full Stack', 
     description: 'Développement de nos plateformes SaaS et APIs' },
   { icon: <Brain size={32} />, title: 'Data Scientists', 
-    description: 'Modèles IA et algorithmes d'analyse géospatiale' },
+    description: "Modèles IA et algorithmes d'analyse géospatiale" },
   { icon: <Users size={32} />, title: 'Business & Sales', 
     description: 'Développement commercial et relation client' },
 ]

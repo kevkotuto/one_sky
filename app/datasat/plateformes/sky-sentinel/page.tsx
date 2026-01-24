@@ -17,7 +17,7 @@ const useCases = [
   },
   {
     title: 'Protection Infrastructures Critiques',
-    description: 'Surveillance périmétrique de sites sensibles (centrales, barrages, bases militaires) avec détection automatique d'intrusions',
+    description: "Surveillance périmétrique de sites sensibles (centrales, barrages, bases militaires) avec détection automatique d'intrusions",
     metrics: [
       { label: 'Sites', value: 'Multi-sites' },
       { label: 'Périmètre', value: '500m-5km' },
