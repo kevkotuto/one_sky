@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npx shadcn@latest add:*)",
+      "Bash(ls:*)",
+      "Bash(curl:*)",
+      "Bash(wc:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(vercel --prod --yes:*)",
+      "Bash(pnpm dev)",
+      "Bash(pnpm install:*)",
+      "Bash(lsof:*)",
+      "Bash(test:*)",
+      "Bash(vercel --prod:*)",
+      "Bash(vercel logs:*)",
+      "Bash(vercel ls:*)",
+      "Bash(vercel promote:*)",
+      "Bash(find:*)",
+      "Bash(git push)",
+      "Bash(gh repo create:*)"
+    ]
+  }
+}
